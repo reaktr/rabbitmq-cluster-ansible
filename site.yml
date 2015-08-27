@@ -1,0 +1,13 @@
+---
+# Defines deployment design and assigns role to server groups
+
+- hosts: dbs
+  vars:
+    - rabbitmq_ssl: false
+    - erlang_cookie: LSKNKBELKPSTDBBCHETL
+    - enable_rabbitmq_clustering: true
+    - config_rabbitmq_ha: false
+    - rabbitmq_master: comp1
+
+  roles:
+  - ansible-playbook-rabbitmq
